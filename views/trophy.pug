@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1= trophy.trophy
+    h5= trophy.name
+    p= trophy.description
+    hr
+    if user
+        a.btn.btn-default(href='/trophys/edit/'+trophy._id) Edit
+        a.btn.btn-danger.delete-athlete(href='#', data-id=trophy._id) Delete

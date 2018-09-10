@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1= news.title
+    h5 Written by #{author}
+    p= news.body
+    hr
+    if user
+        if user.id == news.author
+            a.btn.btn-primary(href="/news/edit/"+news._id) Edit
+            a.btn.btn-danger.delete-article(href="#",data-id=news._id) Delete

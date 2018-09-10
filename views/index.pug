@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1 #{new_title}
+    ul.list-group
+      each n, i in news
+        li.list-group-item
+          a(href="/news/"+n._id)= n.title
+    hr
+
+    h1 #{trophy_title}
+    ul.list-group
+      each trophy, i in trophys
+        li.list-group-item
+          a(href='/trophys/'+trophy._id)= trophy.trophy
